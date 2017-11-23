@@ -54,7 +54,6 @@ function recursiveAddFields(ent, newEnt) {
     if (!newEnt.hasOwnProperty(k)) {
       let key = getValidKey(k)
       newEnt[key] = ent[k]
-      // Nested Objects & Arrays of Objects
       if (typeof ent[key] === `object`) {
         if (!Array.isArray(ent[key]) && ent[key] != null) {
           newEnt[key] = recursiveAddFields(ent[key], {})
@@ -82,12 +81,10 @@ function getValidKey(key, verbose) {
   let nkey = '' + key
   const NAME_RX = /^[_a-zA-Z][_a-zA-Z0-9]*$/
   let changed = false
-  // Replace invalid characters
   if (!NAME_RX.test(nkey)) {
     changed = true
     nkey = nkey.replace(/-|__|:|\.|\s/g, `_`)
   }
-  // Prefix if first character isn't a letter.
   if (!NAME_RX.test(nkey.slice(0, 1))) {
     changed = true
     nkey = `${conflictFieldPrefix}${nkey}`
