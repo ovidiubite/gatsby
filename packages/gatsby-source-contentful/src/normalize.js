@@ -11,7 +11,7 @@ const digest = str =>
 const typePrefix = `Contentful`
 const makeTypeName = type => _.upperFirst(_.camelCase(`${typePrefix} ${type}`))
 
-const getLocalizedField = ({ field, defaultLocale, locale }) => {
+const getLocalizedField = () => {
   if (field[locale.code]) {
     return field[locale.code]
   } else if (field[locale.fallbackCode]) {
@@ -21,7 +21,7 @@ const getLocalizedField = ({ field, defaultLocale, locale }) => {
   }
 }
 
-const makeGetLocalizedField = ({ locale, defaultLocale }) => field =>
+const makeGetLocalizedField = () => field =>
   getLocalizedField({ field, locale, defaultLocale })
 
 exports.getLocalizedField = getLocalizedField
@@ -42,15 +42,15 @@ exports.fixId = fixId
 exports.fixIds = object =>
   deepMap(object, (v, k) => (k === `id` ? fixId(v) : v))
 
-const makeId = ({ id, currentLocale, defaultLocale }) =>
+const makeId = () =>
   currentLocale === defaultLocale ? id : `${id}___${currentLocale}`
 
 exports.makeId = makeId
 
-const makeMakeId = ({ currentLocale, defaultLocale }) => id =>
+const makeMakeId = () => id =>
   makeId({ id, currentLocale, defaultLocale })
 
-exports.buildEntryList = ({ contentTypeItems, currentSyncData }) =>
+exports.buildEntryList = () =>
   contentTypeItems.map(contentType =>
     currentSyncData.entries.filter(
       entry => entry.sys.contentType.sys.id === contentType.sys.id

@@ -78,7 +78,7 @@ exports.recursiveAddFields = recursiveAddFields
  * @param {any} key
  * @returns the valid name
  */
-function getValidKey({ key, verbose = false }) {
+function getValidKey(key, verbose) {
   let nkey = '' + key
   const NAME_RX = /^[_a-zA-Z][_a-zA-Z0-9]*$/
   let changed = false
@@ -138,7 +138,7 @@ exports.createGatsbyIds = entities =>
     return e
   })
 
-exports.createNodesFromEntities = ({ entities, createNode }) => {
+exports.createNodesFromEntities = (entities, createNode) => {
   entities.forEach(e => {
     let { entity } = e
     let node = {

@@ -26,7 +26,7 @@ const digest = str =>
  * @param {any} key
  * @returns the valid name
  */
-function getValidKey({ key, verbose = false }) {
+function getValidKey() {
   let nkey = "" + key
   const NAME_RX = /^[_a-zA-Z][_a-zA-Z0-9]*$/
   let changed = false
@@ -345,7 +345,7 @@ exports.mapEntitiesToMedia = entities => {
 }
 
 // Downloads media files and removes "sizes" data as useless in Gatsby context.
-exports.downloadMediaFiles = async ({ entities, store, cache, createNode }) =>
+exports.downloadMediaFiles = async (entities, store, cache, createNode) =>
   Promise.all(
     entities.map(async e => {
       let fileNode
@@ -409,7 +409,7 @@ const createACFChildNodes = (
   return acfChildNode
 }
 
-exports.createNodesFromEntities = ({ entities, createNode }) => {
+exports.createNodesFromEntities = (entities, createNode) => {
   entities.forEach(e => {
     // Create subnodes for ACF Flexible layouts
     let { __type } = e // eslint-disable-line no-unused-vars
