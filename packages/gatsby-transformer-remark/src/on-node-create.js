@@ -50,7 +50,6 @@ module.exports = async function onCreateNode({
 
   markdownNode.frontmatter = {
     title: ``, // always include a title
-    ...data.data,
     _PARENT: node.id,
     // TODO Depreciate this at v2 as much larger chance of conflicting with a
     // user supplied field.

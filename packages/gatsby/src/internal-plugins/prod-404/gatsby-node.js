@@ -5,7 +5,6 @@ exports.onCreatePage = ({ page, store, boundActionCreators }) => {
   // https://www.gatsbyjs.org/docs/add-404-page/
   if (!created404 && page.path === `/404/`) {
     boundActionCreators.createPage({
-      ...page,
       path: `/404.html`,
     })
     created404 = true

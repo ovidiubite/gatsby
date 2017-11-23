@@ -121,9 +121,6 @@ export default IndexComponent
 export const query = graphql`
   query FrontPageQuery {
     imageSharp(id: { regex: "/ng-55646/" }) {
-      sizes(maxWidth: 1500, rotate: 180) {
-        ...GatsbyImageSharpSizes
-      }
     }
   }
 `

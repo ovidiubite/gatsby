@@ -40,10 +40,10 @@ class SiteSidebar extends React.Component {
       <div className="card is-fullwidth">
         {header}
         <div className="card-content">
-          <SiteNav {...this.props} />
+          <SiteNav></SiteNav>
           <footer>
             <div className="is-hidden-mobile">
-              <SiteLinks {...this.props} />
+              <SiteLinks/>
             </div>
           </footer>
         </div>

@@ -112,7 +112,6 @@ function inferGraphQLInputFields({
         type: new GraphQLInputObjectType({
           name: createTypeName(`${prefix}QueryList`),
           fields: {
-            ...typeFields(headType),
             in: { type: new GraphQLList(inType) },
           },
         }),

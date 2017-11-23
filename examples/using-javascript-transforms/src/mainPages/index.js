@@ -8,10 +8,7 @@ class SiteIndex extends React.Component {
   render() {
     const pageLinks = []
     let iteratorKey = 0
-    let pageRaw = [
-      ...this.props.data.allMarkdownRemark.edges,
-      ...this.props.data.allJsFrontmatter.edges,
-    ]
+    let pageRaw = []
     let pageArray = []
     pageRaw.forEach(page => {
       if (typeof page.node.frontmatter === `object`) {

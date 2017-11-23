@@ -65,7 +65,6 @@ function createNodes(
 
       var node = {
         // Data for the node.
-        ...item,
         id: `${id}`,
         parent: `__${collectionName}__`,
         children: [],

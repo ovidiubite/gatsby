@@ -10,7 +10,6 @@ import presets from "../utils/presets"
 import { vP, vPHd, vPVHd, vPVVHd } from "./gutters"
 
 const navItemStyles = {
-  ...scale(-1 / 3),
   boxSizing: `border-box`,
   display: `inline-block`,
   color: `inherit`,
@@ -97,7 +96,6 @@ export default ({ pathname }) => {
         [presets.Tablet]: {
           position: isHomepage || isBlog ? `absolute` : `fixed`,
         },
-        ...styles,
       }}
     >
       <div
@@ -106,7 +104,6 @@ export default ({ pathname }) => {
           margin: `0 auto`,
           paddingLeft: rhythm(3 / 4),
           paddingRight: rhythm(3 / 4),
-          ...gutters,
           fontFamily: typography.options.headerFontFamily.join(`,`),
           display: `flex`,
           alignItems: `center`,
@@ -137,7 +134,6 @@ export default ({ pathname }) => {
           />
           <h1
             css={{
-              ...scale(2 / 5),
               display: `inline-block`,
               margin: 0,
               verticalAlign: `middle`,
@@ -174,20 +170,12 @@ export default ({ pathname }) => {
           <a
             href="https://github.com/gatsbyjs/gatsby"
             title="GitHub"
-            css={{
-              ...navItemStyles,
-              ...socialIconsStyles,
-            }}
           >
             <GithubIcon style={{ verticalAlign: `text-top` }} />
           </a>
           <a
             href="https://discord.gg/0ZcbPKXt5bZjGY5n"
             title="Discord"
-            css={{
-              ...navItemStyles,
-              ...socialIconsStyles,
-            }}
           >
             <DiscordIcon overrideCSS={{ verticalAlign: `text-top` }} />
           </a>
@@ -195,8 +183,6 @@ export default ({ pathname }) => {
             href="https://twitter.com/gatsbyjs"
             title="@gatsbyjs"
             css={{
-              ...navItemStyles,
-              ...socialIconsStyles,
               paddingRight: 0,
             }}
           >

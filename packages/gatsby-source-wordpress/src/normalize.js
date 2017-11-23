@@ -79,7 +79,6 @@ const normalizeEntities = entities => {
       .map(key => {
         return {
           id: key,
-          ...e[key],
           __type: e.__type,
         }
       })
@@ -399,7 +398,6 @@ const createACFChildNodes = (
   })
 
   const acfChildNode = {
-    ...obj,
     id: entityId + topLevelIndex + type,
     parent: entityId,
     children: [],
@@ -414,7 +412,7 @@ const createACFChildNodes = (
 exports.createNodesFromEntities = ({ entities, createNode }) => {
   entities.forEach(e => {
     // Create subnodes for ACF Flexible layouts
-    let { __type, ...entity } = e // eslint-disable-line no-unused-vars
+    let { __type } = e // eslint-disable-line no-unused-vars
     let children = []
     if (entity.acf) {
       _.each(entity.acf, (value, key) => {
@@ -443,7 +441,6 @@ exports.createNodesFromEntities = ({ entities, createNode }) => {
     }
 
     let node = {
-      ...entity,
       children,
       parent: null,
       internal: {

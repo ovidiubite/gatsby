@@ -8,7 +8,6 @@ describe(`Load plugins`, () => {
     // on platform so will cause snapshots to differ.
     plugins = plugins.map(plugin => {
       return {
-        ...plugin,
         resolve: ``,
       }
     })
@@ -31,7 +30,6 @@ describe(`Load plugins`, () => {
     // on platform so will cause snapshots to differ.
     plugins = plugins.map(plugin => {
       return {
-        ...plugin,
         resolve: ``,
       }
     })

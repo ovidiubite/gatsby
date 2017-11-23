@@ -13,7 +13,6 @@ class Index extends React.Component {
         <div>
           <h1
             css={{
-              ...scale(4 / 5),
               fontWeight: `800`,
               marginBottom: rhythm(2),
             }}

@@ -29,7 +29,6 @@ export const pageQuery = graphql`
   query PostPage($id: String!) {
     # Select the post which equals this id.
     postsJson(id: { eq: $id }) {
-      ...PostDetail_details
     }
   }
 `

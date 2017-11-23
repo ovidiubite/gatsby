@@ -247,7 +247,7 @@ module.exports = async (
           // page components.
           new webpack.optimize.CommonsChunkPlugin({
             name: `commons`,
-            chunks: [`app`, ...components],
+            chunks: [`app`],
             // The more page components there are, the higher we raise the bar
             // for merging in page-specific JS libs into the commons chunk. The
             // two principles here is a) keep the TTI (time to interaction) as
@@ -342,7 +342,7 @@ module.exports = async (
     return {
       // Use the program's extension list (generated via the
       // 'resolvableExtensions' API hook).
-      extensions: [``, ...program.extensions],
+      extensions: [``],
       // Default to using the site's node_modules directory to look for
       // modules. But also make it possible to install modules within the src
       // directory if you need to install a specific version of a module for a

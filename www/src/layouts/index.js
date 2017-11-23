@@ -87,7 +87,6 @@ class DefaultLayout extends React.Component {
                of layouts */}
           <div
             css={{
-              ...sidebarStyles,
               [presets.Tablet]: {
                 display:
                   this.props.location.pathname.slice(0, 6) === `/docs/` ||
@@ -103,7 +102,6 @@ class DefaultLayout extends React.Component {
                of layouts */}
           <div
             css={{
-              ...sidebarStyles,
               [presets.Tablet]: {
                 display:
                   this.props.location.pathname.slice(0, 10) === `/tutorial/`
@@ -116,7 +114,6 @@ class DefaultLayout extends React.Component {
           </div>
           <div
             css={{
-              ...sidebarStyles,
               [presets.Tablet]: {
                 display:
                   this.props.location.pathname.slice(0, 9) === `/features`

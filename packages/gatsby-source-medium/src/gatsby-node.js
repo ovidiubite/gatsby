@@ -42,7 +42,7 @@ exports.sourceNodes = async ({ boundActionCreators }, { username }) => {
       collectionKeys.map(key => json.payload.references.Collection[key]),
     ]
 
-    const resources = Array.prototype.concat(...importableResources)
+    const resources = Array.prototype.concat(importableResources)
     resources.map(resource => {
       convertTimestamps(resource)
 

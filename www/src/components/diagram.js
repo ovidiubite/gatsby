@@ -61,7 +61,6 @@ const SegmentTitle = ({ children }) => (
       padding: `.35rem .6rem`,
       fontWeight: `normal`,
       letterSpacing: `.5px`,
-      ...scale(-2 / 5),
       lineHeight: 1,
       textTransform: `uppercase`,
       transform: `translateZ(0)`,
@@ -113,7 +112,6 @@ const SourceItems = ({ children }) => (
       display: `flex`,
       flexWrap: `wrap`,
       justifyContent: `center`,
-      ...box,
     }}
   >
     {children}
@@ -138,8 +136,6 @@ const SourceItem = ({ children }) => (
   >
     <div
       css={{
-        ...borderAndBoxShadow,
-        ...boxPadding,
         lineHeight: 1.2,
         textAlign: `left`,
       }}
@@ -155,7 +151,6 @@ const ItemTitle = ({ children }) => (
       color: presets.brand,
       margin: 0,
       fontStyle: `normal`,
-      ...scale(0),
     }}
   >
     {children}
@@ -180,7 +175,6 @@ const ItemDescription = ({ children }) => (
 const Gatsby = ({ children }) => (
   <div
     css={{
-      ...borderAndBoxShadow,
       padding: rhythm(1),
       margin: `0 auto`,
       width: rhythm(5.5),
@@ -235,13 +229,12 @@ const Diagram = ({ containerCSS }) => (
       padding: vP,
       marginTop: rhythm(1),
       textAlign: `center`,
-      ...containerCSS,
       [presets.Tablet]: {
         marginTop: 0,
       },
     }}
   >
-    <h1 css={{ marginBottom: rhythm(1.5), ...scale(0.9) }}>How Gatsby works</h1>
+    <h1 css={{ marginBottom: rhythm(1.5) }}>How Gatsby works</h1>
     <div css={{ maxWidth: rhythm(20), margin: `0 auto ${rhythm(2)}` }}>
       <FuturaParagraph>
         Gatsby lets you build blazing-fast sites with <em>your data</em>,
@@ -275,8 +268,6 @@ const Diagram = ({ containerCSS }) => (
       <SegmentTitle>Build</SegmentTitle>
       <div
         css={{
-          ...box,
-          ...stripeBg,
           paddingTop: 0,
           paddingBottom: 0,
         }}
@@ -286,8 +277,6 @@ const Diagram = ({ containerCSS }) => (
         <VerticalLine />
         <div
           css={{
-            ...borderAndBoxShadow,
-            ...boxPadding,
             paddingTop: rhythm(1 / 2),
             paddingBottom: rhythm(1 / 2),
             width: `auto`,
@@ -310,7 +299,6 @@ const Diagram = ({ containerCSS }) => (
       <SegmentTitle>Deploy</SegmentTitle>
       <div
         css={{
-          ...box,
           paddingBottom: rhythm(1),
         }}
       >

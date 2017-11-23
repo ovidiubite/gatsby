@@ -29,9 +29,7 @@ export const pageQuery = graphql`
   query PageQuery {
     allHnStory(sort: { fields: [order] }) {
       edges {
-        node {
-          ...Story_item
-        }
+        node
       }
     }
   }

@@ -1,8 +1,8 @@
 const path = require(`path`)
 const os = require(`os`)
 
-export function joinPath(...paths) {
-  const joinedPath = path.join(...paths)
+export function joinPath(paths) {
+  const joinedPath = path.join(paths)
   if (os.platform() === `win32`) {
     return joinedPath.replace(/\\/g, `\\\\`)
   } else {
@@ -11,5 +11,5 @@ export function joinPath(...paths) {
 }
 
 export function withBasePath(basePath) {
-  return (...paths) => joinPath(basePath, ...paths)
+  return () => joinPath(basePath)
 }

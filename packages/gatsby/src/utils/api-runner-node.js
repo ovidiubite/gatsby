@@ -65,7 +65,6 @@ const runAPI = (plugin, api, args) => {
   if (gatsbyNode[api]) {
     const apiCallArgs = [
       {
-        ...args,
         pathPrefix,
         boundActionCreators: doubleBoundActionCreators,
         loadNodeContent,
@@ -84,10 +83,10 @@ const runAPI = (plugin, api, args) => {
     // expect a Promise to be returned.
     if (gatsbyNode[api].length === 3) {
       return Promise.fromCallback(callback =>
-        gatsbyNode[api](...apiCallArgs, callback)
+        gatsbyNode[api](callback)
       )
     } else {
-      const result = gatsbyNode[api](...apiCallArgs)
+      const result = gatsbyNode[api]()
       return Promise.resolve(result)
     }
   }

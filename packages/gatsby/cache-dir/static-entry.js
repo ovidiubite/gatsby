@@ -98,10 +98,6 @@ module.exports = (locals, callback) => {
             const props = layoutProps ? layoutProps : routeProps
             return createElement(
               syncRequires.components[page.componentChunkName],
-              {
-                ...props,
-                ...syncRequires.json[page.jsonName],
-              }
             )
           },
         })
@@ -218,7 +214,6 @@ module.exports = (locals, callback) => {
 
   const html = `<!DOCTYPE html>\n ${renderToStaticMarkup(
     <Html
-      {...bodyProps}
       headComponents={headComponents}
       htmlAttributes={htmlAttributes}
       bodyAttributes={bodyAttributes}

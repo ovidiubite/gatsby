@@ -56,14 +56,12 @@ const Section = props => (
   <div>
     <h3
       css={{
-        ...props.headerStyles,
         marginTop: props.index === 0 ? 0 : rhythm(3 / 2),
       }}
     >
       {props.title}
     </h3>
     <SectionLinks
-      {...props}
       title={props.title}
       isTutorial={props.title === `Tutorial`}
     />
@@ -85,15 +83,7 @@ const SectionLinks = props => {
     : false
 
   return (
-    <ul
-      css={{
-        ...listStyles,
-        "& ul": {
-          ...listStyles,
-        },
-        ...tutorialStyles,
-      }}
-    >
+    <ul>
       {props.items.map((item, index) => (
         <SectionLink
           node={item}
@@ -198,7 +188,6 @@ class SidebarBody extends React.Component {
             }}
           >
             <Section
-              {...section}
               title={section.title}
               headerStyles={headerStyles}
               index={index}

@@ -20,7 +20,7 @@ const normalize = require(`normalize-path`)
 
 exports.extractQueries = () => {
   const state = store.getState()
-  const pagesAndLayouts = [...state.pages, ...state.layouts]
+  const pagesAndLayouts = []
   const components = _.uniq(pagesAndLayouts.map(p => p.component))
   const queryCompilerPromise = queryCompiler().then(queries => {
     components.forEach(component => {
@@ -62,7 +62,7 @@ const runQueriesForComponent = componentPath => {
 
 const getPagesForComponent = componentPath => {
   const state = store.getState()
-  return [...state.pages, ...state.layouts].filter(
+  return [].filter(
     p => p.componentPath === componentPath
   )
 }

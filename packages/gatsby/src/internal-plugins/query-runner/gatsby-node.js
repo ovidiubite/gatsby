@@ -24,7 +24,7 @@ const handlePageOrLayout = store => pageOrLayout => {
   import Component from "${pageOrLayout.component}"
   import data from "${jsonDest}"
 
-  export default (props) => <Component {...props} {...data} />
+  export default (props) => <Component />
   `
     fs.writeFileSync(pageOrLayout.componentWrapperPath, wrapperComponent)
   }

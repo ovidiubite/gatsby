@@ -43,14 +43,11 @@ class EvaluationCell extends Component {
     return (
       <div
         css={{
-          ...basicStyling,
-          // border: `1px solid ${presets.brandLight}`,
           backgroundColor:
             [`N/A`, `0`, ``].indexOf(this.props.num) !== -1
               ? bgDefault
               : bgFeatureAvailability,
           backgroundImage: getBackground(this.props.num),
-          ...(this.props.style || {}),
         }}
       />
     )

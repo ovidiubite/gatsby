@@ -7,7 +7,7 @@ describe(`paths`, () => {
       it(`joins paths like path.join on Unix-type platforms.`, () => {
         const paths = [`/foo`, `bar`, `baz`]
         const expected = paths.join(`/`)
-        const actual = joinPath(...paths)
+        const actual = joinPath()
         expect(actual).toBe(expected)
       })
     }
@@ -16,7 +16,7 @@ describe(`paths`, () => {
       it(`replaces '\\' with '\\\\' on Windows.`, () => {
         const paths = [`foo`, `bar`, `baz`]
         const expected = paths.join(`\\\\`)
-        const actual = joinPath(...paths)
+        const actual = joinPath()
         expect(actual).toBe(expected)
       })
     }

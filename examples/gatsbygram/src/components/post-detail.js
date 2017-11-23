@@ -55,7 +55,6 @@ class PostDetail extends React.Component {
     const PostDetails = () => (
       <div
         css={{
-          ...scale(-2 / 5),
           lineHeight: typography.options.baseLineHeight,
         }}
       >

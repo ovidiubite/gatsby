@@ -18,7 +18,6 @@ exports.createFileNode = async (pathToFile, pluginOptions = {}) => {
   const slashed = slash(pathToFile)
   const parsedSlashed = path.parse(slashed)
   const slashedFile = {
-    ...parsedSlashed,
     absolutePath: slashed,
     // Useful for limiting graphql query with certain parent directory
     relativeDirectory: path.relative(
@@ -75,8 +74,6 @@ exports.createFileNode = async (pathToFile, pluginOptions = {}) => {
       accessTime: stats.atime,
       changeTime: stats.ctime,
       birthTime: stats.birthtime,
-      ...slashedFile,
-      ...stats,
     })
   )
 }

@@ -23,7 +23,6 @@ module.exports = (state = {}, action) => {
     case `REPLACE_COMPONENT_QUERY`:
       action.payload.componentPath = normalize(action.payload.componentPath)
       state[action.payload.componentPath] = {
-        ...state[action.payload.componentPath],
         query: action.payload.query,
       }
       return state

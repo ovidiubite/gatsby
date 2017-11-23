@@ -28,19 +28,16 @@ class BlogPostTemplate extends React.Component {
       marginBottom: 0,
       color: presets.calm,
       fontWeight: `normal`,
-      ...scale(0),
       lineHeight: 1,
     }
     const BioLine = ({ children }) => (
       <p
         css={{
-          ...scale(-2 / 5),
           fontFamily: typography.options.headerFontFamily.join(`,`),
           lineHeight: 1.3,
           margin: 0,
           color: presets.calm,
           [presets.Mobile]: {
-            ...scale(-1 / 5),
             lineHeight: 1.3,
           },
         }}
@@ -138,7 +135,6 @@ class BlogPostTemplate extends React.Component {
               <Link to={post.frontmatter.author.fields.slug}>
                 <h4
                   css={{
-                    ...scale(0),
                     fontWeight: 400,
                     margin: 0,
                   }}

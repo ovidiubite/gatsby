@@ -105,30 +105,7 @@ export const pageQuery = graphql`
       timeISO(fromNow: true)
       descendants
       by
-      children {
-        ...StoryComment
-        children {
-          ...StoryComment
-          children {
-            ...StoryComment
-            children {
-              ...StoryComment
-              children {
-                ...StoryComment
-                children {
-                  ...StoryComment
-                  children {
-                    ...StoryComment
-                    children {
-                      ...StoryComment
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      children
     }
   }
 `

@@ -54,7 +54,6 @@ class BlogPostRoute extends React.Component {
           </h1>
           <p
             css={{
-              ...scale(-1 / 5),
               display: `block`,
               color: `${styles.colors.light}`,
             }}
@@ -96,7 +95,6 @@ class BlogPostRoute extends React.Component {
           <span
             css={{
               color: styles.colors.light,
-              ...scale(-1 / 5),
             }}
           >
             <small
@@ -136,18 +134,7 @@ export const pageQuery = graphql`
           id
           bio
           avatar {
-            children {
-              ... on ImageSharp {
-                resolutions(
-                  width: 50
-                  height: 50
-                  quality: 75
-                  grayscale: true
-                ) {
-                  ...GatsbyImageSharpResolutions
-                }
-              }
-            }
+            children
           }
         }
       }

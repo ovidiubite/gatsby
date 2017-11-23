@@ -55,15 +55,13 @@ class AnimationExample extends React.Component {
 
 const NavLink = props => (
   <li style={styles.navItem}>
-    <Link {...props} style={{ color: `inherit` }} />
+    <Link style={{ color: `inherit` }} />
   </li>
 )
 
 const HSL = ({ match: { params } }) => (
   <div
     style={{
-      ...styles.fill,
-      ...styles.hsl,
       background: `hsl(${params.h}, ${params.s}%, ${params.l}%)`,
     }}
   >
@@ -82,7 +80,6 @@ styles.fill = {
 }
 
 styles.content = {
-  ...styles.fill,
   top: `40px`,
   textAlign: `center`,
 }
@@ -105,7 +102,6 @@ styles.navItem = {
 }
 
 styles.hsl = {
-  ...styles.fill,
   color: `white`,
   paddingTop: `20px`,
   fontSize: `30px`,

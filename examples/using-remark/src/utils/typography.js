@@ -88,7 +88,6 @@ const options = {
       },
       // Fake image captions.
       ".post .gatsby-resp-image-link + em": {
-        ...scale(0 / 5),
         fontFamily: `Spectral, serif`,
         lineHeight: 1.4,
         display: `block`,
@@ -192,9 +191,6 @@ const options = {
       [presets.Phablet]: {
         html: {
           fontSize: `${18 / 16 * 100}%`,
-        },
-        h1: {
-          ...scale(7 / 5),
         },
       },
       [presets.Desktop]: {

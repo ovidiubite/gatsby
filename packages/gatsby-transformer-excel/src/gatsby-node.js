@@ -38,7 +38,6 @@ async function onCreateNode(
           .digest(`hex`)
 
         return {
-          ...obj,
           id: obj.id ? obj.id : `${node.id} [${n} ${i}] >>> ${node.extension}`,
           children: [],
           parent: node.id,

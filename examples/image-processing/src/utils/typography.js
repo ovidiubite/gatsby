@@ -5,7 +5,6 @@ let theme = require(`typography-theme-bootstrap`).default
 theme.overrideThemeStyles = ({ rhythm, scale }) => {
   return {
     "h1, h2, h3": {
-      ...scale(1 / 6),
       fontWeight: `normal`,
       color: `#999`,
       lineHeight: `1.2`,

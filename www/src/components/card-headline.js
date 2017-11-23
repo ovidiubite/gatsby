@@ -4,7 +4,6 @@ import { rhythm, scale, options } from "../utils/typography"
 const CardHeadline = ({ children }) => (
   <h2
     css={{
-      ...scale(2 / 5),
       lineHeight: 1.2,
       marginTop: 0,
       [presets.Tablet]: {

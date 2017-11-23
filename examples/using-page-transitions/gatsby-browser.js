@@ -57,11 +57,9 @@ class ReplaceComponentRenderer extends React.Component {
       key: this.props.location.key,
     }
     return (
-      <Transition {...transitionProps}>
+      <Transition>
       {
         (status) => createElement(this.props.pageResources.component, {
-          ...this.props,
-          ...this.props.pageResources.json,
           transition: {
             status,
             timeout,

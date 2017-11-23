@@ -70,7 +70,7 @@ function buildLocalCommands(cli, isLocalSite) {
       report.verbose(`set gatsby_executing_command: "${command}"`)
 
       let localCmd = resolveLocalCommand(command)
-      let args = { ...argv, ...siteInfo }
+      let args = {}
 
       report.verbose(`running command: ${command}`)
       return handler ? handler(args, localCmd) : localCmd(args)

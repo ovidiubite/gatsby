@@ -19,7 +19,6 @@ const MastheadBg = () => (
   <div
     className="masthead-bg"
     css={{
-      ...cover,
       overflow: `hidden`,
       zIndex: -1,
     }}
@@ -27,8 +26,7 @@ const MastheadBg = () => (
     <div
       className="masthead-bg-left-fill"
       css={{
-        ...cover,
-        right: `auto`,
+          right: `auto`,
         width: vPOff,
         zIndex: -10,
         background: presets.brandLighter,
@@ -48,8 +46,7 @@ const MastheadBg = () => (
       preserveAspectRatio="xMinYMin slice"
       className="masthead-bg-left"
       css={{
-        ...cover,
-        left: vPOff,
+          left: vPOff,
         zIndex: -2,
         [presets.Hd]: {
           left: vPHdOff,
@@ -109,8 +106,7 @@ const MastheadBg = () => (
       preserveAspectRatio="xMidYMin meet"
       className="masthead-bg-right"
       css={{
-        ...cover,
-        width: `calc(180% - + 4vh)`,
+          width: `calc(180% - + 4vh)`,
         height: `100%`,
         zIndex: -1,
         top: `2%`,

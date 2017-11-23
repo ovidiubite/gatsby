@@ -43,7 +43,6 @@ function createPropNodes(node, component, boundActionCreators) {
     let content = JSON.stringify(prop)
 
     let propNode = {
-      ...prop,
       id: propNodeId,
       children: [],
       parent: node.id,
@@ -81,7 +80,6 @@ export default function onCreateNode(
         const nodeId = `${node.id}--${component.displayName}--ComponentMetadata`
 
         let metadataNode = {
-          ...component,
           props: null, // handled by the prop node creation
           id: nodeId,
           children: [],

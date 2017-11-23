@@ -6,7 +6,6 @@ module.exports = (state = { plugins: {} }, action) => {
       return { plugins: {} }
     case `UPDATE_PLUGINS_HASH`:
       return {
-        ...state,
         PLUGINS_HASH: action.payload,
       }
     case `SET_PLUGIN_STATUS`:
@@ -23,9 +22,7 @@ module.exports = (state = { plugins: {} }, action) => {
         )
       }
       return {
-        ...state,
         plugins: {
-          ...state.plugins,
           [action.plugin.name]: _.merge(
             {},
             state.plugins[action.plugin.name],

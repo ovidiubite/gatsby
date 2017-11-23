@@ -46,8 +46,8 @@ function nameHandler(filePath = `/AnonymousComponent_${++fileCount}`) {
  * Wrap handlers to pass in additional arguments such as the File node
  */
 function makeHandlers(node, handlers) {
-  handlers = (handlers || []).map(h => (...args) => h(...args, node))
-  return [nameHandler(node.absolutePath), ...handlers]
+  handlers = (handlers || []).map(h => (args) => h(args, node))
+  return [nameHandler(node.absolutePath)]
 }
 
 export default function parseMetadata(content, node, options) {

@@ -50,7 +50,6 @@ exports.sourceNodes = ({ boundActionCreators, store }) => {
   // exist and we need a node to exist so its query works :-)
   const page = { path: `/dev-404-page/` }
   createNode({
-    ...page,
     id: createPageId(page.path),
     parent: `SOURCE`,
     children: [],
@@ -66,7 +65,6 @@ exports.sourceNodes = ({ boundActionCreators, store }) => {
   flattenedPlugins.forEach(plugin => {
     plugin.pluginFilepath = plugin.resolve
     createNode({
-      ...plugin,
       packageJson: transformPackageJson(
         require(`${plugin.resolve}/package.json`)
       ),
@@ -89,19 +87,14 @@ exports.sourceNodes = ({ boundActionCreators, store }) => {
 
   const createGatsbyConfigNode = (config = {}) => {
     // Delete plugins from the config as we add plugins above.
-    const configCopy = { ...config }
+    const configCopy = {}
     delete configCopy.plugins
     const node = {
-      siteMetadata: {
-        ...configCopy.siteMetadata,
-      },
       port: state.program.port,
       host: state.program.host,
-      ...configCopy,
       buildTime,
     }
     createNode({
-      ...node,
       id: `Site`,
       parent: `SOURCE`,
       children: [],
@@ -136,7 +129,6 @@ exports.onCreatePage = ({ page, boundActionCreators }) => {
 
   // Add page.
   createNode({
-    ...page,
     id: createPageId(page.path),
     parent: `SOURCE`,
     children: [],

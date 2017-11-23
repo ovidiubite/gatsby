@@ -9,7 +9,6 @@ module.exports = (state = {}, action) => {
     case `ADD_FIELD_TO_NODE`:
     case `ADD_CHILD_NODE_TO_PARENT_NODE`:
       newState = {
-        ...state,
         [action.payload.id]: action.payload,
       }
       return newState

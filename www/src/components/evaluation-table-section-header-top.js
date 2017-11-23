@@ -21,7 +21,6 @@ const superHeader = () => (
           },
           display: `none`,
           textTransform: `uppercase`,
-          ...scale(-3 / 6),
           lineHeight: 1,
           fontWeight: 500,
           textAlign: `center`,

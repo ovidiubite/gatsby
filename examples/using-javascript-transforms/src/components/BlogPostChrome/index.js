@@ -8,13 +8,13 @@ class BlogPostChrome extends React.Component {
 
     return (
       <div className="BlogPostChrome">
-        <HelmetBlock {...frontmatter} />
+        <HelmetBlock/>
         <div className="content">
           <div className="section">
             <div className="container content">{this.props.children}</div>
           </div>
         </div>
-        <PostPublished {...frontmatter} />
+        <PostPublished></PostPublished>
       </div>
     )
   }

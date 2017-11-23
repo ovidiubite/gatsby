@@ -100,7 +100,7 @@ module.exports = ({
           .then(v => [k, v])
       )
     ).then(resolvedFields => {
-      const myNode = { ...node }
+      const myNode = {}
       resolvedFields.forEach(([k, v]) => (myNode[k] = v))
       return myNode
     })

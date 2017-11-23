@@ -16,7 +16,6 @@ export default ({ children, className, hasSideBar = true, css = {} }) => (
       [presets.Tablet]: {
         paddingBottom: rhythm(1.5),
       },
-      ...css,
     }}
     className={className}
   >

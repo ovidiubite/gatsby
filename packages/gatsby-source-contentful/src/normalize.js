@@ -304,7 +304,7 @@ exports.createContentTypeNodes = ({
         }
       })
 
-      entryNode = { ...entryItemFields, ...entryNode, node_locale: locale.code }
+      entryNode = Object.assign({}, entryItemFields, entryNode, { node_locale: locale.code })
 
       // Get content digest of node.
       const contentDigest = digest(stringify(entryNode))
@@ -349,7 +349,7 @@ exports.createAssetNodes = ({
     const mId = makeMakeId({ currentLocale: locale.code, defaultLocale })
     const getField = makeGetLocalizedField({ locale, defaultLocale })
 
-    const localizedAsset = { ...assetItem }
+    const localizedAsset = Object.assign({}, assetItem)
     // Create a node for each asset. They may be referenced by Entries
     //
     // Get localized fields.
@@ -366,7 +366,6 @@ exports.createAssetNodes = ({
       id: mId(localizedAsset.sys.id),
       parent: null,
       children: [],
-      ...localizedAsset.fields,
       node_locale: locale.code,
       internal: {
         type: `${makeTypeName(`Asset`)}`,

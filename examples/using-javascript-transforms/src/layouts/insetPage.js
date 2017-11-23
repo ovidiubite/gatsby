@@ -8,11 +8,11 @@ class InsetPageLayout extends React.Component {
 
     return (
       <div className="PageTemplate">
-        <MasterLayout {...this.props}>
+        <MasterLayout>
           <div className="section">
             <div className="columns">
               <div className="column is-one-quarter">
-                <SiteSidebar {...this.props} />
+                <SiteSidebar />
               </div>
               <div className="column">{this.props.children()}</div>
             </div>

@@ -17,7 +17,6 @@ const writePages = async () => {
     (mem, { path, matchPath, componentChunkName, layout, jsonName }) => {
       const layoutOjb = getLayoutById(layouts)(layout)
       return [
-        ...mem,
         {
           componentChunkName,
           layout,

@@ -20,7 +20,6 @@ module.exports = async () => {
   const schema = new GraphQLSchema({
     query: new GraphQLObjectType({
       name: `RootQueryType`,
-      fields: { ...connections, ...nodes },
     }),
   })
 

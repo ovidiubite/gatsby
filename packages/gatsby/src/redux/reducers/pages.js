@@ -23,14 +23,9 @@ module.exports = (state = [], action) => {
       // If the path already exists, overwrite it.
       // Otherwise, add it to the end.
       if (index !== -1) {
-        return [
-          ...state
-            .slice(0, index)
-            .concat(action.payload)
-            .concat(state.slice(index + 1)),
-        ]
+        return []
       } else {
-        return [...state.concat(action.payload)]
+        return []
       }
     }
     case `DELETE_PAGE`:

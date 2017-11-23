@@ -157,7 +157,6 @@ apiRunnerAsync(`onClientEntry`).then(() => {
                   if (loader.getPage(props.location.pathname)) {
                     return createElement(ComponentRenderer, {
                       page: true,
-                      ...props,
                     })
                   } else {
                     return createElement(ComponentRenderer, {

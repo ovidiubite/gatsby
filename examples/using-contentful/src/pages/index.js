@@ -88,11 +88,6 @@ export const pageQuery = graphql`
           productName {
             productName
           }
-          image {
-            resolutions(width: 75) {
-              ...GatsbyContentfulResolutions
-            }
-          }
         }
       }
     }
@@ -102,11 +97,6 @@ export const pageQuery = graphql`
           id
           productName {
             productName
-          }
-          image {
-            resolutions(width: 75) {
-              ...GatsbyContentfulResolutions
-            }
           }
         }
       }

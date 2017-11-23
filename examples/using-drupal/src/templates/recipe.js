@@ -91,11 +91,7 @@ export const query = graphql`
           relationships {
             imageFile {
               localFile {
-                childImageSharp {
-                  sizes(maxWidth: 470, maxHeight: 353) {
-                    ...GatsbyImageSharpSizes
-                  }
-                }
+                childImageSharp
               }
             }
           }

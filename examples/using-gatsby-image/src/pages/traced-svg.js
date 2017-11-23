@@ -68,7 +68,6 @@ const UnsplashMasonry = edges => (
           <Img sizes={image.node.sizes} />
           <span
             css={{
-              ...scale(-1),
               color: options.bodyColor,
               position: `absolute`,
               bottom: 10,
@@ -150,32 +149,9 @@ export default TracedSVG
 
 export const query = graphql`
   query TracedSVGQuery {
-    reddImageMobile: imageSharp(id: { regex: "/redd/" }) {
-      resolutions(width: 125) {
-        ...GatsbyImageSharpResolutions_tracedSVG
-      }
-    }
-    reddImage: imageSharp(id: { regex: "/redd/" }) {
-      resolutions(width: 200) {
-        ...GatsbyImageSharpResolutions_tracedSVG
-      }
-    }
-    kenImage: imageSharp(id: { regex: "/ken-treloar/" }) {
-      sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes_tracedSVG
-      }
-    }
     unsplashImages: allImageSharp(filter: { id: { regex: "/unsplash/" } }) {
       edges {
-        node {
-          sizes(
-            maxWidth: 430
-            quality: 80
-            traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
-          ) {
-            ...GatsbyImageSharpSizes_tracedSVG
-          }
-        }
+        node
       }
     }
   }

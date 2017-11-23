@@ -101,7 +101,7 @@ async function findGraphQLTags(file, text): Promise<Array<DefinitionNode>> {
                     }
                   })
 
-                  queries.push(...gqlAst.definitions)
+                  queries.push(gqlAst.definitions)
                 }
               },
             })

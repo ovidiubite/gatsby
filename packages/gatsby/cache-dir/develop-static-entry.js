@@ -60,7 +60,6 @@ module.exports = (locals, callback) => {
   })
 
   const htmlElement = React.createElement(HTML, {
-    ...bodyProps,
     body: ``,
     headComponents: headComponents.concat([
       <script key={`io`} src="/socket.io/socket.io.js" />,

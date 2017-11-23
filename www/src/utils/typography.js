@@ -54,20 +54,10 @@ const options = {
       "ul, ol": {
         marginTop: rhythm(options.blockMarginBottom),
       },
-      h1: {
-        ...scale(4 / 5),
-      },
       h3: {
-        ...scale(2 / 5),
         lineHeight: 1,
         marginTop: rhythm(options.blockMarginBottom),
         marginBottom: rhythm(options.blockMarginBottom / 2),
-      },
-      h4: {
-        ...scale(1 / 5),
-      },
-      h5: {
-        ...scale(0),
       },
       blockquote: {
         paddingLeft: rhythm(options.blockMarginBottom),
@@ -144,7 +134,6 @@ const options = {
       },
       // Target image captions. This is kind of a fragile selector...
       ".gatsby-resp-image-link + em": {
-        ...scale(-1 / 5),
         lineHeight: 1.3,
         paddingTop: rhythm(3 / 8),
         marginBottom: rhythm(options.blockMarginBottom * 2),

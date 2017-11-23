@@ -19,7 +19,7 @@ module.exports = Object.assign(reporter, {
   },
 
   panic(...args) {
-    this.error(...args)
+    this.error(args)
     process.exit(1)
   },
 

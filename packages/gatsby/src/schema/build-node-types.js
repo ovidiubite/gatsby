@@ -111,11 +111,7 @@ module.exports = async () => {
       allNodes: getNodes(),
     })
 
-    return {
-      ...defaultNodeFields,
-      ...inferredFields,
-      ...type.fieldsFromPlugins,
-    }
+    return {}
   }
 
   async function createType(nodes, typeName) {
@@ -156,7 +152,6 @@ module.exports = async () => {
     )
 
     const proccesedType: ProcessedNodeType = {
-      ...intermediateType,
       fieldsFromPlugins: mergedFieldsFromPlugins,
       nodeObjectType: gqlType,
       node: {
@@ -173,7 +168,7 @@ module.exports = async () => {
             args = {}
           }
           return runSift({
-            args: { filter: { ...args } },
+            args: { filter: {} },
             nodes: latestNodes,
             path: context.path ? context.path : `LAYOUT___${context.id}`,
             type: gqlType,

@@ -20,8 +20,6 @@ module.exports = async (pageOrLayout, component) => {
     result = {}
   } else {
     result = await graphql(component.query, {
-      ...pageOrLayout,
-      ...pageOrLayout.context,
     })
   }
 

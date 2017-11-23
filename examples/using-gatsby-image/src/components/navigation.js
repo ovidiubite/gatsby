@@ -59,7 +59,6 @@ const Navigation = () => (
       <Link
         to="/"
         css={{
-          ...scale(3 / 4),
           backgroundImage: `none`,
           color: options.accentColor,
         }}

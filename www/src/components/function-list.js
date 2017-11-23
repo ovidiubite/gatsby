@@ -14,14 +14,12 @@ const Param = (param, depth = 0) => {
       key={`param ${JSON.stringify(param)}`}
       css={{
         marginLeft: `${depth * 1.05}rem`,
-        ...(depth > 0 && scale((depth === 1 ? -1 : -1.5) / 5)),
         lineHeight: options.baseLineHeight,
       }}
     >
       <h5
         css={{
           margin: 0,
-          ...(depth > 0 && scale((depth === 1 ? 0 : -0.5) / 5)),
         }}
       >
         {param.name === `$0` ? `destructured object` : param.name}

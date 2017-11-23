@@ -161,7 +161,6 @@ exports.onCreateNode = async ({
       const strContent = JSON.stringify(picked, null, 4)
 
       const docNode = {
-        ...picked,
         commentNumber: i,
         id: commentId(node.id, i),
         parent: node.id,

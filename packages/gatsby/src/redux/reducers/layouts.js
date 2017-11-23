@@ -25,13 +25,13 @@ module.exports = (state = [], action) => {
       // Otherwise, add it to the end.
       if (index !== -1) {
         return [
-          ...state
+          state
             .slice(0, index)
             .concat(action.payload)
             .concat(state.slice(index + 1)),
         ]
       } else {
-        return [...state.concat(action.payload)]
+        return [state.concat(action.payload)]
       }
     }
     case `DELETE_LAYOUT`:

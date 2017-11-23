@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 // Handle legacy names for image queries.
 const convertProps = props => {
-  let convertedProps = { ...props }
+  let convertedProps = {}
   if (convertedProps.responsiveResolution) {
     convertedProps.resolutions = convertedProps.responsiveResolution
     delete convertedProps.responsiveResolution
@@ -79,10 +79,9 @@ const isWebpSupported = () => {
 }
 
 const Img = props => {
-  const { opacity, onLoad, transitionDelay = ``, ...otherProps } = props
+  const { opacity, onLoad, transitionDelay = `` } = props
   return (
     <img
-      {...otherProps}
       onLoad={onLoad}
       style={{
         position: `absolute`,
@@ -199,7 +198,6 @@ class Image extends React.Component {
               position: `relative`,
               overflow: `hidden`,
               zIndex: 1,
-              ...style,
             }}
             ref={this.handleRef}
           >
@@ -281,7 +279,6 @@ class Image extends React.Component {
         zIndex: 1,
         width: image.width,
         height: image.height,
-        ...style,
       }
 
       if (style.display === `inherit`) {

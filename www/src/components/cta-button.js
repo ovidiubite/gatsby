@@ -12,14 +12,11 @@ let stripeAnimation = css.keyframes({
 const CtaButton = ({ to, overrideCSS, children }) => (
   <Link
     css={{
-      ...overrideCSS,
-      ...scale(1 / 5),
       display: `inline-block`,
       fontFamily: options.headerFontFamily.join(`,`),
       padding: `${rhythm(2 / 5)} ${rhythm(1 / 2)}`,
       borderRadius: presets.radius,
       [presets.Tablet]: {
-        ...scale(2 / 5),
         padding: `${rhythm(1 / 4)} ${rhythm(3 / 5)}`,
       },
       [presets.VHd]: {

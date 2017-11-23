@@ -184,7 +184,6 @@ const resolveResponsiveResolution = (image, options) => {
             }
             const h = Math.round(size / desiredAspectRatio)
             return `${createUrl(image.file.url, {
-              ...options,
               width: size,
               height: h,
             })} ${resolution}`
@@ -204,7 +203,6 @@ const resolveResponsiveResolution = (image, options) => {
           width: Math.round(options.width),
           height: Math.round(pickedHeight),
           src: createUrl(image.file.url, {
-            ...options,
             width: options.width,
           }),
           srcSet,
@@ -264,7 +262,6 @@ const resolveResponsiveSizes = (image, options) => {
           .map(width => {
             const h = Math.round(width / desiredAspectRatio)
             return `${createUrl(image.file.url, {
-              ...options,
               width,
               height: h,
             })} ${Math.round(width)}w`
@@ -275,7 +272,6 @@ const resolveResponsiveSizes = (image, options) => {
           base64: base64Str,
           aspectRatio: aspectRatio,
           src: createUrl(image.file.url, {
-            ...options,
             width: options.maxWidth,
             height: options.maxHeight,
           }),

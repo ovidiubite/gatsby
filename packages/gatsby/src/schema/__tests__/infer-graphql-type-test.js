@@ -19,7 +19,7 @@ function queryResult(nodes, fragment, { types = [] } = {}) {
                 name: `Test`,
                 fields: inferObjectStructureFromNodes({
                   nodes,
-                  types: [{ name: `Test` }, ...types],
+                  types: [{ name: `Test` }],
                 }),
               })
             ),

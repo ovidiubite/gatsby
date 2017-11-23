@@ -93,7 +93,6 @@ export function connectionDefinitions(
           resolve: resolveNode,
           description: `The previous edge in the connection`,
         },
-        ...(resolveMaybeThunk(edgeFields): any),
       }
     },
   })
@@ -111,7 +110,6 @@ export function connectionDefinitions(
           type: new GraphQLList(edgeType),
           description: `A list of edges.`,
         },
-        ...(resolveMaybeThunk(connectionFields): any),
       }
     },
   })

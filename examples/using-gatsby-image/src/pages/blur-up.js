@@ -51,19 +51,10 @@ export default BlurUp
 export const query = graphql`
   query BlurUpQuery {
     reddImageMobile: imageSharp(id: { regex: "/redd/" }) {
-      resolutions(width: 125) {
-        ...GatsbyImageSharpResolutions
-      }
     }
     reddImage: imageSharp(id: { regex: "/redd/" }) {
-      resolutions(width: 200) {
-        ...GatsbyImageSharpResolutions
-      }
     }
     kenImage: imageSharp(id: { regex: "/ken-treloar/" }) {
-      sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes
-      }
     }
   }
 `

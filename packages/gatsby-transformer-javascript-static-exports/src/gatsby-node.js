@@ -93,14 +93,12 @@ async function onCreateNode({
     // from exports.data. Each set of exports should have its
     // own object to track errors separately. Add below as noted.
     exportsData = {
-      ...data,
       error: false,
     }
   } catch (e) {
     // stick the error on the query so the user can
     // react to an error as they see fit
     exportsData = {
-      ...data,
       error: {
         err: true,
         code: e.code,
@@ -119,14 +117,14 @@ async function onCreateNode({
       id: `${node.id} >>> JSFrontmatter`,
       children: [],
       parent: node.id,
-      node: { ...node },
+      node: {},
       internal: {
         contentDigest,
         type: `JSFrontmatter`,
       },
     }
 
-    nodeData.data = { ...exportsData }
+    nodeData.data = {}
     // eventually add additional exports here
 
     if (node.internal.type === `File`) {

@@ -209,7 +209,7 @@ async function fetchData({
     // Process entities to creating GraphQL Nodes.
     if (Array.isArray(routeResponse)) {
       routeResponse = routeResponse.map(r => {
-        return { ...r, __type: type }
+        return { __type: type }
       })
       entities = entities.concat(routeResponse)
     } else {

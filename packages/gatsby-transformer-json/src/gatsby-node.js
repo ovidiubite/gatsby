@@ -10,7 +10,6 @@ async function onCreateNode({ node, boundActionCreators, loadNodeContent }) {
       .update(objStr)
       .digest(`hex`)
     const jsonNode = {
-      ...obj,
       id,
       children: [],
       parent: node.id,

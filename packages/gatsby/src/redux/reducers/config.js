@@ -46,7 +46,7 @@ module.exports = (state = {}, action) => {
       }
 
       return {
-        ...action.payload,
+        action.payload,
       }
     }
     default:

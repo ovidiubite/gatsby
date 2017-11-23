@@ -77,8 +77,8 @@ const findIdsWithoutDataDependencies = () => {
   // paths.
   return _.difference(
     [
-      ...state.pages.map(p => p.path),
-      ...state.layouts.map(l => `LAYOUT___${l.id}`),
+      pages.map(p => p.path),
+      layouts.map(l => `LAYOUT___${l.id}`),
     ],
     allTrackedIds
   )
@@ -92,7 +92,7 @@ const runQueriesForIds = ids => {
   const state = store.getState()
   return Promise.all(
     ids.map(id => {
-      const pagesAndLayouts = [...state.pages, ...state.layouts]
+      const pagesAndLayouts = []
       const plObj = pagesAndLayouts.find(
         pl => pl.path === id || `LAYOUT___${pl.id}` === id
       )

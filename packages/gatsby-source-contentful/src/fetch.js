@@ -106,7 +106,6 @@ function pagedGet(
   aggregatedResponse = null
 ) {
   return client[method]({
-    ...query,
     skip: skip,
     limit: pageLimit,
     order: `sys.createdAt`,

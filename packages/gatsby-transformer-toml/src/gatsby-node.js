@@ -25,7 +25,6 @@ async function onCreateNode({ node, boundActionCreators, loadNodeContent }) {
     .digest(`hex`)
 
   const newNode = {
-    ...parsedContent,
     id: parsedContent.id ? parsedContent.id : `${node.id} >>> TOML`,
     children: [],
     parent: node.id,

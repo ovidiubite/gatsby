@@ -23,7 +23,7 @@ class BlogPostLayout extends React.Component {
 
     return (
       <div>
-        <MasterLayout {...this.props}>
+        <MasterLayout>
           {home}
           <div className="container">{this.props.children()}</div>
           <div className="footer container">

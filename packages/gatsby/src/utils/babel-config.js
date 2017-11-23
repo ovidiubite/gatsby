@@ -184,7 +184,7 @@ module.exports = async function babelConfig(program, stage) {
     babelrc: normalizedConfig,
   })
   if (modifiedConfig.length > 0) {
-    modifiedConfig = _.merge({}, ...modifiedConfig)
+    modifiedConfig = _.merge({}, modifiedConfig)
     // Otherwise this means no plugin changed the babel config.
   } else {
     modifiedConfig = {}

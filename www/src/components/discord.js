@@ -8,7 +8,7 @@ const DiscordIcon = ({ overrideCSS }) => (
     height="1em"
     width="1em"
     preserveAspectRatio="xMidYMid meet"
-    css={{ verticalAlign: `middle`, ...overrideCSS }}
+    css={{ verticalAlign: `middle` }}
   >
     <g>
       <path d="M11.5,11.7c-0.8,0-1.4,0.7-1.4,1.6s0.6,1.6,1.4,1.6c0.8,0,1.4-0.7,1.4-1.6

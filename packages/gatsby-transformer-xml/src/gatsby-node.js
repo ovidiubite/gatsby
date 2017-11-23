@@ -22,7 +22,6 @@ async function onCreateNode({ node, boundActionCreators, loadNodeContent }) {
       delete obj.children
     }
     return {
-      ...obj,
       id: obj.attributes.id ? obj.attributes.id : `${node.id} [${i}] >>> XML`,
       parent: node.id,
       children: [],

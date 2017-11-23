@@ -107,7 +107,6 @@ class Post extends React.Component {
               justifyContent: `center`,
               alignItems: `center`,
               color: `white`,
-              ...scale(2 / 5),
             }}
           >
             <HeartIcon

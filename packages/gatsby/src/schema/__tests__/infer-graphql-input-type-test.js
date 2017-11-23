@@ -21,7 +21,7 @@ function queryResult(nodes, query, { types = [] } = {}) {
     name: `Test`,
     fields: inferObjectStructureFromNodes({
       nodes,
-      types: [{ name: `Test` }, ...types],
+      types: [{ name: `Test` }],
     }),
   })
 
@@ -48,7 +48,6 @@ function queryResult(nodes, query, { types = [] } = {}) {
             name: `nodeConnection`,
             type: nodeConnection,
             args: {
-              ...connectionArgs,
               sort: createSortField(`RootQueryType`, sort),
               filter: {
                 type: new GraphQLInputObjectType({

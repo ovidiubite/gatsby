@@ -217,15 +217,6 @@ export const pageQuery = graphql`
             width
             height
           }
-          resolutions(width: 100) {
-            ...GatsbyContentfulResolutions_noBase64
-          }
-          resizing: resolutions(width: 100, height: 100) {
-            ...GatsbyContentfulResolutions_noBase64
-          }
-          sizes(maxWidth: 613) {
-            ...GatsbyContentfulSizes_noBase64
-          }
         }
       }
     }

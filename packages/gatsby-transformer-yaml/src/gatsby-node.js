@@ -11,7 +11,6 @@ async function onCreateNode({ node, boundActionCreators, loadNodeContent }) {
       .update(objStr)
       .digest(`hex`)
     const yamlNode = {
-      ...obj,
       id,
       children: [],
       parent: node.id,

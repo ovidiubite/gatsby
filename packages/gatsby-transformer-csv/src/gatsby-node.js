@@ -38,7 +38,6 @@ async function onCreateNode(
         .digest(`hex`)
 
       return {
-        ...obj,
         id: obj.id ? obj.id : `${node.id} [${i}] >>> CSV`,
         children: [],
         parent: node.id,

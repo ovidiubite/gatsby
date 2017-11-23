@@ -89,19 +89,10 @@ export default PreferWebp
 export const query = graphql`
   query PreferWebpQuery {
     reddImageMobile: imageSharp(id: { regex: "/redd/" }) {
-      resolutions(width: 125) {
-        ...GatsbyImageSharpResolutions_withWebp
-      }
     }
     reddImage: imageSharp(id: { regex: "/redd/" }) {
-      resolutions(width: 200) {
-        ...GatsbyImageSharpResolutions_withWebp
-      }
     }
     kenImage: imageSharp(id: { regex: "/ken-treloar/" }) {
-      sizes(maxWidth: 600) {
-        ...GatsbyImageSharpSizes_withWebp
-      }
     }
   }
 `

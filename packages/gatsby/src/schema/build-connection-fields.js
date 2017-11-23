@@ -54,7 +54,6 @@ module.exports = type => {
     group: {
       type: new GraphQLList(groupConnection),
       args: {
-        ...connectionArgs,
         field: {
           type: new GraphQLEnumType({
             name: _.camelCase(`${type.name} group enum`),

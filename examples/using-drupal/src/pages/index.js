@@ -224,11 +224,7 @@ export const pageQuery = graphql`
               relationships {
                 imageFile {
                   localFile {
-                    childImageSharp {
-                      sizes(maxWidth: 740, maxHeight: 555) {
-                        ...GatsbyImageSharpSizes
-                      }
-                    }
+                    childImageSharp
                   }
                 }
               }
@@ -256,11 +252,7 @@ export const pageQuery = graphql`
               relationships {
                 imageFile {
                   localFile {
-                    childImageSharp {
-                      sizes(maxWidth: 240, maxHeight: 240) {
-                        ...GatsbyImageSharpSizes
-                      }
-                    }
+                    childImageSharp
                   }
                 }
               }
@@ -288,11 +280,7 @@ export const pageQuery = graphql`
               relationships {
                 imageFile {
                   localFile {
-                    childImageSharp {
-                      sizes(maxWidth: 475, maxHeight: 475) {
-                        ...GatsbyImageSharpSizes
-                      }
-                    }
+                    childImageSharp
                   }
                 }
               }

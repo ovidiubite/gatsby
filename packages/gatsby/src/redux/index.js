@@ -37,13 +37,13 @@ if (process.env.REDUX_DEVTOOLS === `true`) {
     name: sitePackageJSON.name,
   })
   store = Redux.createStore(
-    Redux.combineReducers({ ...reducers }),
+    Redux.combineReducers({ reducers }),
     initialState,
     composeEnhancers(Redux.applyMiddleware())
   )
 } else {
   store = Redux.createStore(
-    Redux.combineReducers({ ...reducers }),
+    Redux.combineReducers({ reducers }),
     initialState
   )
 }

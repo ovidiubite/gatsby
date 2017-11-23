@@ -47,7 +47,6 @@ type BootstrapArgs = {
 
 module.exports = async (args: BootstrapArgs) => {
   const program = {
-    ...args,
     // Fix program directory path for windows env.
     directory: slash(args.directory),
   }

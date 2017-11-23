@@ -125,8 +125,6 @@ const addNotFoundRoute = () => {
       key: `404-page`,
       component: props =>
         createElement(syncRequires.components[noMatch.componentChunkName], {
-          ...props,
-          ...syncRequires.json[noMatch.jsonName],
         }),
     })
   } else {
@@ -172,7 +170,6 @@ const Root = () =>
                 return createElement(ComponentRenderer, {
                   key: `normal-page`,
                   page: true,
-                  ...props,
                   pageResources,
                 })
               } else {
@@ -182,10 +179,6 @@ const Root = () =>
                   component: props =>
                     createElement(
                       syncRequires.components[dev404Page.componentChunkName],
-                      {
-                        ...props,
-                        ...syncRequires.json[dev404Page.jsonName],
-                      }
                     ),
                 })
               }

@@ -52,7 +52,6 @@ module.exports = (types: any) => {
       type: typeConnection,
       description: `Connection to all ${type.name} nodes`,
       args: {
-        ...connectionArgs,
         sort,
         filter: {
           type: new GraphQLInputObjectType({

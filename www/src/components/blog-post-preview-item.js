@@ -41,13 +41,6 @@ class BlogPostPreviewItem extends React.Component {
               display: `inline-block`,
               fontFamily: typography.options.headerFontFamily.join(`,`),
               color: presets.calm,
-              ...scale(-2 / 5),
-              [presets.Mobile]: {
-                ...scale(-1 / 5),
-              },
-              [presets.Desktop]: {
-                ...scale(0),
-              },
             }}
           >
             <div>

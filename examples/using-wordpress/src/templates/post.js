@@ -67,7 +67,6 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
-      ...PostIcons
       acf {
         page_builder_post {
           __typename

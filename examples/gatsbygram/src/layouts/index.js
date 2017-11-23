@@ -105,7 +105,6 @@ class DefaultLayout extends React.Component {
             >
               <h1
                 css={{
-                  ...scale(4 / 5),
                   lineHeight: 1,
                   margin: 0,
                   overflow: `hidden`,
@@ -156,7 +155,6 @@ class DefaultLayout extends React.Component {
           <div>
             {isModal
               ? this.props.children({
-                  ...this.props,
                   location: { pathname: `/` },
                 })
               : this.props.children()}

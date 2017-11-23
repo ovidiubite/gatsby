@@ -65,7 +65,6 @@ const ISO_8601_FORMAT = [
 function inferGraphQLType({
   exampleValue,
   selector,
-  ...otherArgs
 }): ?GraphQLFieldConfig<*, *> {
   if (exampleValue == null || isEmptyObjectOrArray(exampleValue)) return null
   let fieldName = selector.split(`.`).pop()
@@ -82,7 +81,6 @@ function inferGraphQLType({
       headType = new GraphQLObjectType({
         name: createTypeName(fieldName),
         fields: inferObjectStructureFromNodes({
-          ...otherArgs,
           exampleValue,
           selector,
         }),
@@ -90,7 +88,6 @@ function inferGraphQLType({
       // Else if the values are simple values, just infer their type.
     } else {
       let inferredType = inferGraphQLType({
-        ...otherArgs,
         exampleValue,
         selector,
       })
@@ -173,8 +170,7 @@ function inferGraphQLType({
         type: new GraphQLObjectType({
           name: createTypeName(fieldName),
           fields: inferObjectStructureFromNodes({
-            ...otherArgs,
-            exampleValue,
+              exampleValue,
             selector,
           }),
         }),
@@ -550,7 +546,7 @@ export function inferObjectStructureFromNodes({
   const mapping = config && config.mapping
 
   // Ensure nodes have internal key with object.
-  nodes = nodes.map(n => (n.internal ? n : { ...n, internal: {} }))
+  nodes = nodes.map(n => (n.internal ? n : { internal: {} }))
 
   const inferredFields = {}
   _.each(exampleValue, (value, key) => {

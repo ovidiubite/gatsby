@@ -25,7 +25,6 @@ elkGlenTheme.overrideThemeStyles = ({ rhythm, scale }, options) => {
       letterSpacing: `-.025em`,
     },
     h1: {
-      ...scale(1),
       color: options.accentColor,
       marginTop: `0 !important`,
       lineHeight: 1,

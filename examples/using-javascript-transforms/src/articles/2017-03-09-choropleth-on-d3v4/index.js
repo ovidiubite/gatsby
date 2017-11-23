@@ -52,7 +52,7 @@ class choroplethBase extends React.Component {
     let html = data.html
 
     return (
-      <BlogPostChrome {...this.props.data.jsFrontmatter.data}>
+      <BlogPostChrome>
         <div className="section">
           <div className="container">
             <div id="states" />
@@ -206,9 +206,6 @@ export const pageQuery = graphql`
       fields: { slug: { eq: "/2017-03-09-choropleth-on-d3v4/_choropleth/" } }
     ) {
       html
-    }
-    jsFrontmatter(fields: { slug: { eq: $slug } }) {
-      ...JSBlogPost_data
     }
   }
 `

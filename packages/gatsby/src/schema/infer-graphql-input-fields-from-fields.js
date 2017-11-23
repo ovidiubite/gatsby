@@ -138,7 +138,6 @@ function convertToInputFilter(
     return new GraphQLInputObjectType({
       name: createTypeName(`${prefix}QueryList`),
       fields: {
-        ...innerFields,
         in: { type: new GraphQLList(innerType) },
       },
     })

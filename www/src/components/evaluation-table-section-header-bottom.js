@@ -40,7 +40,6 @@ const renderSubHeader = props => (
           // borderLeft: i > 0 ? `1px solid ${presets.brandLighter}` : `none`,
           // borderRight: i === 5 ? `1px solid ${presets.brandLighter}` : `none`,
           fontWeight: 600,
-          ...scale(-1 / 9),
           lineHeight: 1.3,
           textAlign: `left`,
           verticalAlign: `middle`,

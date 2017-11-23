@@ -13,7 +13,7 @@ describe(`gatsby-plugin-coffeescript`, () => {
     const spy = jest.fn()
     const config = {
       loader(...args) {
-        spy(...args)
+        spy(args)
       },
     }
 

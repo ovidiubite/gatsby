@@ -155,7 +155,6 @@ class Index extends React.Component {
         {!this.state.showingMore && (
           <a
             css={{
-              ...scale(-0.5),
               border: `1px solid blue`,
               boxShadow: 0,
               background: `none`,
@@ -203,7 +202,6 @@ export const pageQuery = graphql`
       edges {
         node {
           username
-          ...Avatar_user
         }
       }
     }
@@ -213,9 +211,6 @@ export const pageQuery = graphql`
           id
           text
           weeksAgo: time(difference: "weeks")
-          ...Post_details
-          ...PostDetail_details
-          ...Modal_posts
         }
       }
     }

@@ -140,7 +140,7 @@ exports.createGatsbyIds = entities =>
 
 exports.createNodesFromEntities = ({ entities, createNode }) => {
   entities.forEach(e => {
-    let { ...entity } = e
+    let { entity } = e
     let node = {
       ...entity,
       parent: null,

@@ -96,7 +96,6 @@ module.exports = async (config = {}) => {
       const info = resolvePlugin(plugin)
 
       return {
-        ...info,
         pluginOptions: {
           plugins: [],
         },
@@ -126,7 +125,6 @@ module.exports = async (config = {}) => {
       const info = resolvePlugin(plugin.resolve)
 
       return {
-        ...info,
         pluginOptions: _.merge({ plugins: [] }, plugin.options),
       }
     }

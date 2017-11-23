@@ -11,26 +11,19 @@ module.exports = (state = { active: [], done: [] }, action) => {
       }
       const index = _.findIndex(state.active, j => j.id === action.payload.id)
       const mergedJob = _.merge(state.active[index], {
-        ...action.payload,
         createdAt: Date.now(),
         plugin: action.plugin,
       })
       if (index !== -1) {
         return {
           done: state.done,
-          active: [
-            ...state.active
-              .slice(0, index)
-              .concat([mergedJob])
-              .concat(state.active.slice(index + 1)),
-          ],
+          active: [],
         }
       } else {
         return {
           done: state.done,
           active: state.active.concat([
             {
-              ...action.payload,
               createdAt: Date.now(),
               plugin: action.plugin,
             },
@@ -54,7 +47,6 @@ module.exports = (state = { active: [], done: [] }, action) => {
       return {
         done: state.done.concat([
           {
-            ...job,
             completedAt,
             runTime: moment(completedAt).diff(moment(job.createdAt)),
           },

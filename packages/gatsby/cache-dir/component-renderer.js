@@ -104,7 +104,7 @@ class ComponentRenderer extends React.Component {
 
   render() {
     const pluginResponses = apiRunner(`replaceComponentRenderer`, {
-      props: { ...this.props, pageResources: this.state.pageResources },
+      props: { pageResources: this.state.pageResources },
     })
     const replacementComponent = pluginResponses[0]
     // If page.
@@ -114,8 +114,6 @@ class ComponentRenderer extends React.Component {
           replacementComponent ||
           createElement(this.state.pageResources.component, {
             key: this.props.location.pathname,
-            ...this.props,
-            ...this.state.pageResources.json,
           })
         )
       } else {
@@ -134,7 +132,6 @@ class ComponentRenderer extends React.Component {
               this.state.pageResources && this.state.pageResources.layout
                 ? this.state.pageResources.layout
                 : `DefaultLayout`,
-            ...this.props,
           }
         )
       )
