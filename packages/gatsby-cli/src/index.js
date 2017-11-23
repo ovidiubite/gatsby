@@ -10,7 +10,7 @@ const report = require(`./reporter`)
 global.Promise = require(`bluebird`)
 
 const version = process.version
-const verDigit = Number(version.match(/\d+/)[0])
+const verDigit = +version.match(/\d+/)[0]
 
 if (verDigit < 4) {
   report.panic(

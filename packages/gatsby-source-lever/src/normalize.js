@@ -79,7 +79,7 @@ exports.recursiveAddFields = recursiveAddFields
  * @returns the valid name
  */
 function getValidKey({ key, verbose = false }) {
-  let nkey = String(key)
+  let nkey = `` + key
   const NAME_RX = /^[_a-zA-Z][_a-zA-Z0-9]*$/
   let changed = false
   // Replace invalid characters

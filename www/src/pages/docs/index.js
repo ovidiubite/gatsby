@@ -70,7 +70,7 @@ class IndexRoute extends React.Component {
           }}
         >
           <h2>Documentation</h2>
-          <SidebarBody inline yaml={docsSidebar} />
+          <SidebarBody inline={true} yaml={docsSidebar} />
         </div>
       </Container>
     )

@@ -45,7 +45,7 @@ class IndexPage extends React.Component {
       <div style={{ marginBottom: rhythm(2) }}>
         <h2>Gatsby's integration with the Contentful Image API</h2>
         <Link to="/image-api/">See examples</Link>
-        <br />
+        <br><br/>
         <br />
         <br />
         <h2>Localization</h2>
