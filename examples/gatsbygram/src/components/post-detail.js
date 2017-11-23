@@ -121,7 +121,7 @@ class PostDetail extends React.Component {
               },
             }}
           >
-            <PostDetails><PostDetails/>
+            <PostDetails></PostDetails>
           </div>
         </div>
         <div

@@ -37,13 +37,13 @@ const BlurUp = ({ data }) => (
       title={`Photo by Redd Angelo on Unsplash`}
       resolutions={data.reddImage.resolutions}
     />
-    <Lorem />
+    <Lorem> </Lorem>
     <Img
       sizes={data.kenImage.sizes}
       backgroundColor
       title={`Photo by Ken Treloar on Unsplash`}
     />
-    <Ipsum />
+    <Ipsum></Ipsum>
   </div>
 )
 

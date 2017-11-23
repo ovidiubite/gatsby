@@ -32,7 +32,7 @@ const fixId = id => {
   if (!_.isString(id)) {
     id = id.toString()
   }
-  if (id.slice(0, 1) !== NaN) {
+  if (id.slice(0, 1) != NaN) {
     return `c${id}`
   }
   return id
