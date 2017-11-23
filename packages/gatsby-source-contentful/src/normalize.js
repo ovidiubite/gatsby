@@ -22,7 +22,7 @@ const getLocalizedField = () => {
 }
 
 const makeGetLocalizedField = () => field =>
-  getLocalizedField({ field, locale, defaultLocale })
+  getLocalizedField(field, locale, defaultLocale)
 
 exports.getLocalizedField = getLocalizedField
 
@@ -48,7 +48,7 @@ const makeId = () =>
 exports.makeId = makeId
 
 const makeMakeId = () => id =>
-  makeId({ id, currentLocale, defaultLocale })
+  makeId(id, currentLocale, defaultLocale)
 
 exports.buildEntryList = () =>
   contentTypeItems.map(contentType =>
@@ -57,13 +57,13 @@ exports.buildEntryList = () =>
     )
   )
 
-exports.buildResolvableSet = ({
+exports.buildResolvableSet = (
   entryList,
   existingNodes = [],
   assets = [],
   locales,
   defaultLocale,
-}) => {
+) => {
   const resolvable = new Set()
   existingNodes.forEach(n => resolvable.add(n.id))
 
@@ -77,13 +77,13 @@ exports.buildResolvableSet = ({
   return resolvable
 }
 
-exports.buildForeignReferenceMap = ({
+exports.buildForeignReferenceMap = (
   contentTypeItems,
   entryList,
   resolvable,
   defaultLocale,
   locales,
-}) => {
+) => {
   const foreignReferenceMap = {}
   contentTypeItems.forEach((contentTypeItem, i) => {
     const contentTypeItemId = contentTypeItem.name.toLowerCase()
@@ -162,7 +162,7 @@ function createTextNode(node, key, text, createNode) {
 }
 exports.createTextNode = createTextNode
 
-exports.createContentTypeNodes = ({
+exports.createContentTypeNodes = (
   contentTypeItem,
   restrictedNodeFields,
   conflictFieldPrefix,
@@ -172,7 +172,7 @@ exports.createContentTypeNodes = ({
   foreignReferenceMap,
   defaultLocale,
   locales,
-}) => {
+) => {
   const contentTypeItemId = contentTypeItem.name
   locales.forEach(locale => {
     const mId = makeMakeId({ currentLocale: locale.code, defaultLocale })
@@ -339,15 +339,15 @@ exports.createContentTypeNodes = ({
   })
 }
 
-exports.createAssetNodes = ({
+exports.createAssetNodes = (
   assetItem,
   createNode,
   defaultLocale,
   locales,
-}) => {
+) => {
   locales.forEach(locale => {
     const mId = makeMakeId({ currentLocale: locale.code, defaultLocale })
-    const getField = makeGetLocalizedField({ locale, defaultLocale })
+    const getField = makeGetLocalizedField(locale, defaultLocale)
 
     const localizedAsset = Object.assign({}, assetItem)
     // Create a node for each asset. They may be referenced by Entries
