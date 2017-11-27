@@ -14,7 +14,7 @@ class BlogPostChrome extends React.Component {
             <div className="container content">{this.props.children}</div>
           </div>
         </div>
-        <PostPublished></PostPublished>
+        <PostPublished/>
       </div>
     )
   }
