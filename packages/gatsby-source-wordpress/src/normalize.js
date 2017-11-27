@@ -14,7 +14,7 @@ const digest = str =>
     .digest(`hex`)
 
 function getValidKey() {
-  let nkey = "" + key
+  let nkey = String(key)
   const NAME_RX = /^[_a-zA-Z][_a-zA-Z0-9]*$/
   let changed = false
 
