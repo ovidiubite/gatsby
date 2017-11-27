@@ -30,7 +30,7 @@ const fixId = id => {
   if (!_.isString(id)) {
     id = id.toString()
   }
-  if (id.slice(0, 1) != NaN) {
+  if (!isNaN(id.slice(0, 1))) {
     return `c${id}`
   }
   return id
@@ -141,7 +141,7 @@ function createTextNode(node, key, text, createNode) {
     id: `${node.id}${key}TextNode`,
     parent: node.id,
     children: [],
-    [key]: str,
+    key: str,
     internal: {
       type: _.camelCase(`${node.internal.type} ${key} TextNode`),
       mediaType: `text/markdown`,
